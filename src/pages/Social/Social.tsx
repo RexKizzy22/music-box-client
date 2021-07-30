@@ -22,7 +22,6 @@ const Social = () => {
     } else if (token === 'googleAcct') {
       setLoginMessage('You already have an account created with google, please login with google');
       setMessage('googleAcct');
-      console.log('MESSAGE***', message);
     } else {
       localStorage.setItem('musicApiUser', token);
       localStorage.setItem('prevRoute', 'login');

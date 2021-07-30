@@ -17,7 +17,6 @@ export const useRecentlyPlayed = () => {
 
   const addToRecentlyPlayed = async (directory: DirectoryTypes, id: string) => {
     if (songCtx.currentSong && songCtx.recentlyPlayed !== id) {
-      console.log('reached here');
       try {
         const URL = 'https://music-box-b.herokuapp.com/api/v1/music-box-api/recently-played';
         const config = {
@@ -29,7 +28,7 @@ export const useRecentlyPlayed = () => {
         await axios.post(URL, { directory, id }, config);
         songCtx.setRecentlyPlayed(id);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     }
   };

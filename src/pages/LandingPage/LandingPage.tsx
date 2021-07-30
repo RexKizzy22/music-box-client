@@ -34,7 +34,6 @@ const LandingPage = () => {
 
   useEffect(() => {
     if (loginMessage) {
-      console.log(loginMessage);
       setOpen(true);
     }
   }, [loginMessage]);

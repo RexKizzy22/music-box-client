@@ -109,7 +109,6 @@ const Library = (props: Props) => {
       setAlertType('success');
       setOpenAlert(true);
     } catch (error) {
-      console.log(error.response.data.message);
       setOpenBackdrop(false);
       setOpenBackdrop(false);
       setAlertMsg('An error occurred Please try again');

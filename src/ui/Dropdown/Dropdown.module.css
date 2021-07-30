@@ -32,14 +32,13 @@
   position: relative;
   display: inline-block;
 }
-.dropdown-container h3 {
+.moreIcon {
   border: 0;
   color: white;
   cursor: pointer;
   outline: 0;
   font-weight: bold;
   font-size: 30px;
-  margin-right: 1.5rem;
 }
 
 /* @media screen and (max-width: 600px) {

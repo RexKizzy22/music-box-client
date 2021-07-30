@@ -61,7 +61,7 @@ function NavigationBar(this: any, props: Props) {
     }
   }
   const logOut = () => {
-    localStorage.removeItem('musicApiUser');
+    localStorage.clear();
     window.location.reload();
   };
   const fetchAll = async () => {
@@ -75,7 +75,6 @@ function NavigationBar(this: any, props: Props) {
       const {
         data: { data },
       } = await axios.get(`https://music-box-b.herokuapp.com/api/v1/music-box-api/search/?name=${search}`, config);
-      console.log(data);
       const album = data[0].album.map((items: Record<string, any>) => items);
       const artist = data[0].artist.map((items: Record<string, any>) => items);
       const playlist = data[0].playlist.map((items: Record<string, any>) => items);
@@ -90,7 +89,7 @@ function NavigationBar(this: any, props: Props) {
       }
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setIsLoading(false);
     }
   };
@@ -120,10 +119,12 @@ function NavigationBar(this: any, props: Props) {
   return (
     <header>
       <Navbar variant='dark' fixed='top' expand='lg' className={classes.Nav}>
-        <Navbar.Brand href='/home'>
-          <div className={classes.logo_div}>
-            <img className={classes.logo} src={music_logo} alt='logo'></img>
-          </div>
+        <Navbar.Brand>
+          <NavLink to='/home'>
+            <div className={classes.logo_div}>
+              <img className={classes.logo} src={music_logo} alt='logo'></img>
+            </div>
+          </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>

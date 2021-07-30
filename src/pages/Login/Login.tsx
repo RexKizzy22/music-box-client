@@ -90,7 +90,7 @@ const Login = ({ show, onHide, showSignup }: Props) => {
               <Row>
                 <Col md={6} xs={6}>
                   <Form.Group className={styles.noAccount} controlId='rememberme'>
-                    <Form.Check type='checkbox' label='Remember me' />
+                    <Form.Check type='checkbox' style={{ color: '#000000' }} label='Remember me' />
                   </Form.Group>
                 </Col>
                 <Col md={6} xs={6}>
@@ -129,7 +129,7 @@ const Login = ({ show, onHide, showSignup }: Props) => {
               </Link>
             </div>
             <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
-              <p>Don't have an account?</p>
+              <p style={{ color: '#000000' }}>Don't have an account?</p>
             </div>
           </Modal.Body>
         </Form>

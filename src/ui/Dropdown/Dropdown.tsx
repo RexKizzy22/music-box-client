@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import classes from './Dropdown.module.css';
 import { SortContext } from '../../context/SortContext';
+import MoreVertIcon from '@material-ui/icons/MoreHorizOutlined';
 
 interface Props {}
 
@@ -36,9 +37,9 @@ const Dropdown: React.FunctionComponent = (props: Props) => {
 
   return (
     <div className={classes['dropdown-container']} ref={container}>
-      <h3 onClick={onClickHandler} className={classes.button}>
-        ...
-      </h3>
+      <div>
+        <MoreVertIcon className={classes.moreIcon} onClick={onClickHandler} />
+      </div>
       {dropdownState && (
         <div className={classes['sort-dropdown']}>
           <ul>

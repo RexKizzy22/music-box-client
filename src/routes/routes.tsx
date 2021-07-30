@@ -141,7 +141,7 @@ const Routes = () => {
             </Suspense>
           )}
         />
-        <PrivateRoute
+        <Route
           path='/reset-password'
           exact
           render={() => (
@@ -160,7 +160,7 @@ const Routes = () => {
           )}
         />
         <PrivateRoute
-          path='/set-new-password'
+          path='/set-new-password/:id'
           exact
           render={() => (
             <Suspense fallback={<div>Loading...</div>}>

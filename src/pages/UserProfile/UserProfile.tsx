@@ -114,7 +114,7 @@ const UserProfile: React.FC = () => {
 
   // Utils
   const logOut = () => {
-    localStorage.removeItem('musicApiUser');
+    localStorage.clear();
     window.location.reload();
   };
 

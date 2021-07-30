@@ -40,7 +40,7 @@ function MostPlayedArtist() {
 
         setMostPlayed(response.payload);
       } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
       }
     };
     getMostPlayedArtist();
@@ -57,7 +57,7 @@ function MostPlayedArtist() {
             <p>{item.name}</p>
             <i className='fas fa-heart'>
               {' '}
-              <span>{item.listeningCount}</span>
+              <span>{item.likedCount}</span>
             </i>
           </div>
         </div>

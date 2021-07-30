@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
 import { limitSentence, secondsToHms } from '../../utils/utils';
 import useMusicPlayer from '../../hooks/useMusicPlayer';
-import AddToPlaylist from '../PlaylistModal/PlaylistModal';
+// import AddToPlaylist from '../PlaylistModal/PlaylistModal';
 import { AuthContext } from '../../context/AuthContext';
 import Loader from 'react-loader-spinner';
 import PauseCircleOutlineOutlinedIcon from '@material-ui/icons/PauseCircleOutlineOutlined';
@@ -113,7 +113,7 @@ const TracksTable: React.FC<props> = ({ tracks, album, img, albumId }) => {
           </div>
         ))}
 
-      <AddToPlaylist />
+      {/* <AddToPlaylist /> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import genreStyles from './Genres.module.css';
 
 const Genres = () => {
   return (
-    <div className={genreStyles.genreBody} style={{ paddingBottom: 80 }}>
+    <div className={genreStyles.genreBody} style={{}}>
       <div>
         <GenreCard />
       </div>

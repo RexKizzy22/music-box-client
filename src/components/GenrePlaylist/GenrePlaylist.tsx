@@ -59,7 +59,7 @@ const GenrePlaylist: React.FC<Props> = (props) => {
       setAlertType('success');
       setOpenAlert(true);
     } catch (error) {
-      console.log(error.response.data.message);
+      // console.log(error.response.data.message);
       setOpenBackdrop(false);
     }
   };

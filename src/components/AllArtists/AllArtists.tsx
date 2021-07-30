@@ -23,7 +23,7 @@ const AllArtists: React.FC<Props> = (props) => {
         {props.artistes.map((artiste) => {
           return (
             <div key={artiste.id} className={allArtistsStyles.artistDiv} onClick={() => selectArtist(artiste.id)}>
-              <img src={artiste.picture} className={allArtistsStyles.artistImage} alt='' />
+              <img src={artiste.picture} className={allArtistsStyles.artistImage} alt={artiste.name} />
               <div className={allArtistsStyles.artistName}>{artiste.name}</div>
             </div>
           );

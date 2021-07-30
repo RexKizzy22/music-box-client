@@ -111,12 +111,10 @@ export default function AnimatedModal(props: Props) {
   };
 
   const handleCoverChange = (event: any) => {
-    console.log(event.target.value);
     setPlaylistCover(event.target.value);
   };
 
   const handleSubmit = (event: any) => {
-    console.log(desc);
     const data = {
       name: title,
       genreId: genre,

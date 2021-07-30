@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import albumClass from './ShowAllAlbum.module.scss';
 import ash_sm from '../../asset/homepageImages/ash_sm.jpg';
 import axios from 'axios';
@@ -52,13 +52,10 @@ export default function ShowAllAlbum() {
         `https://music-box-b.herokuapp.com/api/v1/music-box-api/search/?name=${query.get('name')}`,
         config
       );
-
-      console.log(data);
       const album = data[0].album.map((item: Record<string, any>) => item);
       setAllAlbum(album);
       setIsLoading(false);
     } catch (error) {
-      console.log(error.message);
       setIsLoading(false);
     }
   };
@@ -72,20 +69,20 @@ export default function ShowAllAlbum() {
     }
   }, [fetchAllAlbum, location.state]);
   return (
-    <>
+    <div style={{ paddingBottom: 240 }}>
       {isLoading && <Loader />}
       {!isLoading && allAlbum && (
         <div className={albumClass.allAlbum}>
           {allAlbum.map((item: Recent) => (
-            <NavLink to={`/album/${item.id}`} className={albumClass.Nav_link} key={item.id}>
+            <Link to={`/album/${item.id}`} className={albumClass.Nav_link} key={item.id}>
               <div className={albumClass.album_img} key={item.id}>
                 <img className={albumClass.imgs || ash_sm} src={item.cover_medium} alt='album img'></img>
                 <div className={albumClass.title}>{item.title}</div>
               </div>
-            </NavLink>
+            </Link>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }

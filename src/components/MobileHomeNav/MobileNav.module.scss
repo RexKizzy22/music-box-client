@@ -13,9 +13,11 @@
   }
 }
 .Drawer {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
-  right: 2.5rem;
   background-color: transparent;
+  width: 100%;
 }
 @media (max-width: 960px) {
   .Drawer {

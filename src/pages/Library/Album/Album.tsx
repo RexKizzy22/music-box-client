@@ -29,7 +29,6 @@ const Library = (props: Props) => {
 
   const fetchData = useCallback(async () => {
     const loadData = [];
-    console.log(token);
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,

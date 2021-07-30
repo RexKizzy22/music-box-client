@@ -124,7 +124,6 @@ const albumMaterialStyles = makeStyles((theme) => ({
     paddingBottom: '60px',
 
     '&::-webkit-scrollbar': {
-      color: 'red',
       height: '8px',
     },
     '&::-webkit-scrollbar-track': {

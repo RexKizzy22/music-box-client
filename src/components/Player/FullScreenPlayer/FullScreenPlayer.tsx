@@ -65,7 +65,6 @@ const FullScreenPlayer = (props: Props) => {
   const [inactiveTitle, setInactiveTitle] = useState('');
 
   const handleTooltipOpen = () => {
-    console.log('I should open o', open);
     setOpen(true);
     setTimeout(() => setOpen(false), 3000);
   };
@@ -171,6 +170,7 @@ const FullScreenPlayer = (props: Props) => {
               if (song.id !== currentSong?.id)
                 return (
                   <SongCard
+                    key={song.id}
                     title={song!.title}
                     id={song!.id}
                     img={queueDetails.cover || defaultCover}

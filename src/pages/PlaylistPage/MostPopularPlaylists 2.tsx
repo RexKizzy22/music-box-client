@@ -33,7 +33,6 @@ const MostPopularPlaylists = () => {
     const response = await axios.get(`${URL}/playlist/mostLiked`, config);
 
     const { payload } = response.data.data;
-    console.log(payload);
 
     for (const key in payload) {
       const owner = payload[key].ownerId._id === _id;

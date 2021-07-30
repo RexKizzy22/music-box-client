@@ -189,6 +189,7 @@
     background-color: #161a1a;
     color: #fff;
     padding: 25px 15px;
+    margin-top: 80px;
   }
   .icons,
   .artistTitle,
@@ -210,11 +211,21 @@
   .followButton {
     display: block;
     margin-bottom: 10px;
+    padding: 10px 2px;
+    width: 130px;
+    border-radius: 50px;
+    font-size: 8px;
   }
   .mobileIcons {
     display: block;
     display: grid;
     grid-template-columns: 1fr 1fr;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  .artistBody {
+    margin-top: 120px;
   }
 }

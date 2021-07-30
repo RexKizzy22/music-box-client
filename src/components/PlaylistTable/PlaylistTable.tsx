@@ -7,7 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
 import Loader from 'react-loader-spinner';
 import useMusicPlayer from '../../hooks/useMusicPlayer';
-import AddToPlaylist from '../PlaylistModal/PlaylistModal';
+// import AddToPlaylist from '../PlaylistModal/PlaylistModal';
 import { AuthContext } from '../../context/AuthContext';
 import PauseCircleOutlineOutlinedIcon from '@material-ui/icons/PauseCircleOutlineOutlined';
 import PlayCircleOutlineOutlinedIcon from '@material-ui/icons/PlayCircleOutlineOutlined';
@@ -105,10 +105,7 @@ const PlaylistTable: React.FC<Props> = ({
       </div>
       {songs.length === 0 && filterTxt !== '' && <p className={classes.noSongs}>No results</p>}
       {songs.length === 0 && filterTxt === '' ? (
-        <h3 className={classes.noSongs}>
-          Playlist empty,
-          {userId === ownerId && <span>click on "edit" to add songs.</span>}
-        </h3>
+        <h3 className={classes.noSongs}>{userId === ownerId && <span>click on "edit" to add songs.</span>}</h3>
       ) : (
         songs.map((track: any, idx: number) => (
           <motion.div
@@ -186,7 +183,7 @@ const PlaylistTable: React.FC<Props> = ({
           </motion.div>
         ))
       )}
-      <AddToPlaylist />
+      {/* <AddToPlaylist /> */}
     </motion.div>
   );
 };

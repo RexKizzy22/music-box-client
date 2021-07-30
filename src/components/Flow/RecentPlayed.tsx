@@ -69,7 +69,6 @@ function RecentlyPlayedArtist() {
         setRecent(response);
         setComponentIsLoading(false);
       } catch (error) {
-        console.log(error.message);
         setComponentIsLoading(false);
       }
     };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import playlistClass from './ShowAllAlbum.module.scss';
 import ash_sm from '../../asset/homepageImages/ash_sm.jpg';
 import axios from 'axios';
@@ -68,20 +68,20 @@ export default function ShowAllPlaylist() {
   }, [fetchAllArtist, location.state]);
 
   return (
-    <>
+    <div style={{ paddingBottom: 240 }}>
       {isLoading && <ShowLoader />}
       {!isLoading && allArtist && (
         <div className={playlistClass.allArtist}>
           {allArtist.map((item: Recent) => (
-            <NavLink to={`/artist/${item.id}`} className={playlistClass.Nav_link} key={item.id}>
+            <Link to={`/artist/${item.id}`} className={playlistClass.Nav_link} key={item.id}>
               <div className={playlistClass.artist_img} key={item.id}>
                 <img className={playlistClass.img || ash_sm} src={item.picture_medium} alt='artist img'></img>
                 <div className={playlistClass.title}> {item.name} </div>
               </div>
-            </NavLink>
+            </Link>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }

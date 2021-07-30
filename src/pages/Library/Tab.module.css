@@ -1,7 +1,6 @@
 .tab {
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
   margin-bottom: 1rem;
   align-items: flex-start;
   /* margin-top: 100px; */
@@ -30,6 +29,13 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .tab-info {
+    padding-left: calc(10% - 50px);
+    padding-right: calc(10% - 40px);
   }
 }
 

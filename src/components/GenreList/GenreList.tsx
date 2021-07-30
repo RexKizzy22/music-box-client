@@ -31,7 +31,7 @@ function GenreList() {
         } = await axios.get(url, config);
         setGenre(response);
       } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
       }
     };
     getAllGenres();

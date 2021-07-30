@@ -1,11 +1,19 @@
 import React, { useState, MouseEvent } from 'react';
 import setPasswordStyles from './SetNewPassword.module.css';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import {Modal} from "react-bootstrap";
 
 const SetNewPassword = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [show, setShow] = useState(false);
+  const { id } = useParams<{ id?: string }>();
+
+  const handleClose = () => setShow(false);
+
+  console.log("Token",id?.split("=")[1])
 
   const resetPassword = async (e: MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -14,20 +22,42 @@ const SetNewPassword = () => {
       setError('Passwords do not match');
       return;
     }
-    const { data } = await axios.put(
-      `https://music-box-b.herokuapp.com/api/v1/music-box-api/users/resetPassword`,
-      { password },
-      {
-        headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZGM4MzFhOWY3ZTllMDAxNTRkYmZlNiIsImlhdCI6MTYyNTE3MTg4NSwiZXhwIjoxNjI1MzQ0Njg1fQ.ZbD1cQa1kwyWLXdGwvYRUllPdkUtnAWSXglttSHjrik`,
-        },
+    try {
+      const { data } = await axios.put(
+        `https://music-box-b.herokuapp.com/api/v1/music-box-api/users/resetPassword`,
+        { password},
+        {
+          headers: {
+            Authorization: `Bearer ${id?.split("=")[1]}`,
+          },
+        }
+      );
+      console.log(data);
+      
+      if (data.status === 'successful') {
+        setShow(true)
+      } else {
+        console.log('error o');
       }
-    );
+    } catch(e) {
+      console.log(e)
+    }
     setPassword('');
     setConfirmPassword('');
-    console.log(data);
   };
   return (
+    <div>
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Successful!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Password has been reset successfully</Modal.Body>
+        <Modal.Footer>
+          <button className={setPasswordStyles.okayButton} onClick={handleClose}>
+            Okay
+          </button>
+        </Modal.Footer>
+      </Modal>
     <div className={setPasswordStyles.resetBody}>
       <div className={setPasswordStyles.formCard}>
         <form onSubmit={resetPassword}>
@@ -62,6 +92,7 @@ const SetNewPassword = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };

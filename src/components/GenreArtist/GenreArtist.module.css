@@ -31,6 +31,19 @@
   overflow: auto;
   gap: 20px;
 }
+/* .artistFlex::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.artistFlex::-webkit-scrollbar {
+  height: 8px;
+}
+
+.artistFlex::-webkit-scrollbar-thumb {
+  background-color: #272a34;
+  border-radius: 4px;
+} */
+
 .left {
   display: inline-block;
 }

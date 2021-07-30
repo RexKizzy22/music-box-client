@@ -9,7 +9,6 @@ import NoResult from '../NoResult/NoResult';
 import Loader from 'react-loader-spinner';
 import { motion } from 'framer-motion';
 import { pageTransition, transit } from '../../utils/animate';
-import music_logo from '../../asset/homepageImages/logo_music.png';
 import debounce from 'lodash.debounce';
 
 interface Props {}
@@ -83,7 +82,7 @@ function SearchInputBox(this: any, props: Props) {
       }
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setIsLoading(false);
     }
   };
@@ -111,11 +110,6 @@ function SearchInputBox(this: any, props: Props) {
 
   return (
     <div className={SearchClass.searchBox}>
-      <Link to='/home'>
-        <div className={SearchClass.logo_div}>
-          <img className={SearchClass.logo} src={music_logo} alt='logo'></img>
-        </div>
-      </Link>
       <Form
         onChange={changeSearch}
         className={SearchClass.searchform}

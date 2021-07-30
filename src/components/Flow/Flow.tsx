@@ -46,8 +46,6 @@ function Flows(prop: FlowsType) {
     typeof songCtx.currentSong?.artist === 'string' ? songCtx.currentSong?.artist : songCtx.currentSong?.artist?.name;
   const controlMusicCurrentSong = `${songCtx.currentSong?.title} (${msg})`;
 
-  console.log(songCtx.currentSong);
-
   const handleImageClick = (event: any) => {
     event.stopPropagation();
     history.push(`/playlist/${prop.id}`);

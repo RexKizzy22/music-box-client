@@ -27,9 +27,7 @@ const useMusicPlayer = () => {
   const { user } = useContext(AuthContext);
   const updateListeningHistory = async (id: number) => {
     try {
-      const {
-        data: { message },
-      } = await axios.put(
+      await axios.put(
         `https://music-box-b.herokuapp.com/api/v1/music-box-api/history/updateHistory/${id}`,
         {},
         {
@@ -38,7 +36,6 @@ const useMusicPlayer = () => {
           },
         }
       );
-      console.log(message);
     } catch (error) {
       console.log(error);
     }

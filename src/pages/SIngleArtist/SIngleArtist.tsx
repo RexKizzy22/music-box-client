@@ -29,7 +29,6 @@ const SIngleArtist = () => {
   const [error, setError] = useState('');
   const [artistMongoId, setArtistMongoId] = useState('');
   const { addToRecentlyPlayed } = useRecentlyPlayed();
-  console.log(artistMongoId);
 
   const { id } = useParams<{ id: string }>();
   useEffect(() => {
@@ -45,18 +44,16 @@ const SIngleArtist = () => {
             },
           });
 
-          console.log('data *********', data);
           const hasBeenLiked = data.artist.likedBy.includes(userId._id);
           if (hasBeenLiked) {
             setLike(true);
           }
-          console.log('ARTIST|! ***', data);
           setArtistName(`${data.artist.name}-${data.artist.id}`);
           setArtistMongoId(data.artist._id);
           setArtist(data);
           setIsLoading(false);
         } catch (e) {
-          console.log(e, 'ERROR');
+          // console.log(e, 'ERROR');
           setIsLoading(false);
         }
       };
@@ -67,7 +64,7 @@ const SIngleArtist = () => {
         setError(e.response);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }, [id, setArtistName, token, userId._id]);
 
@@ -93,9 +90,7 @@ const SIngleArtist = () => {
   const likeArtist = async () => {
     setLike(!like);
     try {
-      const {
-        data: { data },
-      } = await axios.put(
+      await axios.put(
         `https://music-box-b.herokuapp.com/api/v1/music-box-api/artist/like/${id}`,
         {},
         {
@@ -104,9 +99,8 @@ const SIngleArtist = () => {
           },
         }
       );
-      console.log('data ***', data);
     } catch (e) {
-      console.log(e.response, 'ERROR');
+      // console.log(e.response, 'ERROR');
     }
   };
 

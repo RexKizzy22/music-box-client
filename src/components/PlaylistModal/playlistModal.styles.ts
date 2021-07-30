@@ -9,6 +9,7 @@ const playlistModalStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
+    zIndex: 9000000000,
   },
   modalClose: {
     position: 'absolute',
@@ -39,7 +40,6 @@ const playlistModalStyles = makeStyles((theme) => ({
     flexDirection: 'column',
 
     '&::-webkit-scrollbar': {
-      color: 'red',
       height: '4px',
       width: '6px',
     },
