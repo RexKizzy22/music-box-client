@@ -12,10 +12,12 @@ in the following ways:
     - Manually
     - Google Authentication Strategy
     - Facebook Authentication Strategy
+
 - Create a user library comprised of:
     - Playlist (_Public and Private_) and also by likes
     - Artist by likes 
     - Albums by likes
+    
 - Add or remove from playlists as needed.
 - Access your listening history by navigating to the `Listening History` tab.
 - Browse for any track, artist or album by navigating to the `Browse` tab.
@@ -27,6 +29,7 @@ in the following ways:
 The following technologies were used in building this application:
 - HTML/CSS/SASS
 - Material UI Library
+- Typescript
 - React/Context API
 
 
